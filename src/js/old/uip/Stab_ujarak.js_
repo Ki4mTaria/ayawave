@@ -1,0 +1,243 @@
+/**
+ * @file Stab_ujarak.js
+ */
+/*** define ***/
+//var Gtab_state    = null;
+//var Gtab_contsMap = new Array();
+//var Gtab_callback = new Array();
+
+/*** initial ***/
+(function($) {
+  var Gtab_elmWid = 150;
+  var Gtab_elmHei = 45;
+  var Gtab_HdrClass   = "c-tab-ujarak";
+  var Gtab_ContsClass = "c-tab-conts";
+  
+  $.fn.ujaraktab = function( args ) {
+    try {
+      return new UjarakTab( $(this).selector ,
+                            $.extend( args ) );
+    } catch( e ) {
+      alert( e.stack );
+    }
+  }
+  
+  function UjarakTab( tg , opt ) {
+    this.tgt_id = tg;
+    this.sts_id = null;
+    this.elem   = new Array();
+    Ftab_initTab( this , opt );
+  }
+  UjarakTab.prototype = {
+    addTab : function( hdr_id , conts_id ) {
+      try {
+        this.elem.push( new UjarakTabElem( hdr_id , conts_id ) );
+      } catch( e ) {
+        alert( e.stack );
+      }
+    },
+    setClickEvt : function( id , evt ) {
+      try {
+        if ( null == evt ) {
+          throw new Error( "event is null" );
+        }
+        var loop = 0;
+        for( loop=0; loop < this.elem.length ;loop++ ) {
+          if( id == this.elem[loop].hdr.id ) {
+            this.elem[loop].setCallback( evt );
+            return;
+          }
+        }
+        throw new Error( "event is null" );
+      } catch( e ) {
+        alert( e.stack );
+      }
+    },
+    start : function() {
+      try {
+        //Ftab_selTab( Gtab_state );
+        //Ftab_contsFunc( Gtab_state , Gtab_state );
+      } catch( e ) {
+        alert( e.stack );
+      }
+    },
+    setFixed : function (flg) {
+      try {
+      //  var tab_id     = null;
+      //  var left_px    = 0;
+      //  var tab_loop   = 0;
+      //  for( tab_loop = 0 ;
+      //    tab_loop < $( "#" + id + " > .c-tab-ujarak" ).length ;
+      //    tab_loop++ ) {
+      //    tab_id = $( "#" + id + " > " + ".c-tab-ujarak:eq("+ tab_loop + ")" ).attr("id");
+      //    left_px = (150 * tab_loop) - (1 * tab_loop);
+      //    $( "#" + tab_id ).css( "left" , left_px );
+      //  }
+      } catch( e ) {
+        alert( e.stack );
+      }
+    },
+    setEnable : function( tgt_id , flg ) {
+      try {
+      //  if( true === flg ) {
+      //    $( "#" + tgt_id ).fadeIn( 'fast' );
+      //  } else if ( false === flg ) {
+      //    $( "#" + tgt_id ).fadeOut( 'fast' );
+     //   } else {
+      //    throw new Error( "tab enable error" );
+      //  }
+      } catch( e ) {
+        alert( e.stack );
+      }
+    }
+  }
+  
+  function UjarakTabElem( hdr_id , conts_id ) {
+    this.hdr      = new UjarakTabHdr( hdr_id );
+    this.conts    = new UjarakTabConts( conts_id );
+    this.callback = null
+  }
+  UjarakTabElem.prototype = {
+    setCallback : function ( ev ) {
+      try { this.callback = ev; }
+      catch (e) { alert( e.stack ); }
+    },
+    setClickEvt : function() {
+      try {
+        $( "#" + this.hdr.id ).click(function(){
+          try { Ftab_clickElem($(this).attr("id")); }
+          catch( e ) { alert( e.stack ); }
+        });
+      } catch( e ) {
+        alert( e.stack );
+      }
+    }
+  }
+  
+  function UjarakTabHdr( id ) {
+    this.id       = id;
+    this.width    = 150;
+    this.height   = 45;
+    this.callback = null;
+  }
+  UjarakTabHdr.prototype = {
+    setCallback : function ( ev ) {
+      try { this.callback = ev; }
+      catch (e) { alert( e.stack ); }
+    },
+    select : function( flg ) {
+      try {
+        
+      } catch(e) {
+        alert( e.stack );
+      }
+    }
+  }
+  
+  function UjarakTabConts( id ) {
+    this.id = id;
+  }
+  
+  /*** function ***/
+  function Ftab_initTab( tab , opt ) {
+    try {
+      if( 0 == $(tab.tgt_id + " > ." + Gtab_HdrClass ).length ) {
+        throw new Error( "tab init error" );
+      }
+      if( $( tab.tgt_id +" > ." + Gtab_HdrClass ).length !=
+          $( tab.tgt_id + " > ." + Gtab_ContsClass ).length ) {
+        throw new Error( "tab init error" );
+      }
+      var tab_id     = null;
+      var left_px    = 0;
+      var tab_loop   = 0;
+      for( tab_loop = 0 ;
+           tab_loop < $( tab.tgt_id+" > ." + Gtab_HdrClass ).length ;
+           tab_loop++ ) {
+        tab_id   = $( tab.tgt_id + " > ." + Gtab_HdrClass ).eq(tab_loop).attr("id");
+        conts_id = $( tab.tgt_id + " > ." + Gtab_ContsClass ).eq(tab_loop).attr("id");
+        tab.addTab( tab_id , conts_id );
+      }
+      Ftab_setClickEvt( tab );
+      //tab.setOpt(opt);
+    } catch( e ) {
+      alert( e.stack );
+    }
+  }
+  
+  function Ftab_setClickEvt( tab ) {
+    try {
+      var loop = 0;
+      for ( loop=0 ; loop < tab.elem.length ; loop++) {
+        $( "#" + tab.elem[loop].hdr.id ).click(function() {
+          try{ Ftab_clickElem( tab , $(this).attr("id") ); }
+          catch(e){alert(e.stack);}
+        });
+      }
+    } catch ( e ) {
+      alert( e.stack );
+    }
+  }
+  
+  function Ftab_clickElem( tab , id ) {
+    try {
+      // state check
+      if( id == tab.sts_id ) {
+        return;
+      }
+      var sts_buff = tab.sts_id;
+      tab.sts_id   = id;
+      // tab menu
+//      Ftab_selTab( id );
+//      Ftab_contsFunc( id , sts_buff );
+    } catch( e ) {
+      alert( e.stack );
+    }
+  }
+  
+})(jQuery);
+
+function Ftab_contsFunc( id , sts_buff ) {
+  try {
+    var conts_id = Gtab_contsMap[id];
+    if ( null != conts_id ) {
+      $( "#"+ Gtab_contsMap[ sts_buff ] ).fadeOut( 'fast' ,
+        function(){
+          try {
+            for( var cb_idx in Gtab_callback ) {
+              if( ( id === cb_idx ) &&
+                  ( null != Gtab_callback[cb_idx] ) ) {
+                Gtab_callback[cb_idx]();
+              }
+            }
+            $( "#"+ Gtab_contsMap[ Gtab_state ] ).fadeIn('fast',
+              function(){
+              });
+          } catch( e ) {
+            alert( e.stack );
+          }
+        }
+      );
+    }
+  } catch( e ) {
+    alert( e.stack );
+  }
+}
+
+
+function Ftab_selTab( id ) {
+  try {
+    // reset select
+    $( ".c-tab-ujarak" ).removeClass( "c-tab-ujarak_hover" );
+    // set select
+    for( var cont_id in Gtab_contsMap ) {
+      if ( cont_id == id ) {
+        $( "#" + cont_id ).addClass("c-tab-ujarak_hover");
+      }
+    }
+  } catch( e ) {
+    alert( e.stack );
+  }
+}
+
+/* end of file */

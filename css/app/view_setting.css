@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Orbitron:400,700);
+
+#i-view-setting {
+  background: #C7E0F0;
+  z-index:    100;
+}
+
+#i-sdm-close {
+  text-align:    center;
+  font-family:   'Orbitron', sans-serif;
+  margin-top:    10px;
+  margin-bottom: 20px;
+  cursor:        pointer;
+}
+
+.c-sdm-vm {
+  position: relative;
+}
+
+#i-sdm-vm-ttl {
+  top: -1px;
+}
+
+#i-sdm-vm-tag {
+  top: -2px;
+}
+
+#i-sdm-vm-user {
+  top: -3px;
+}
+
+.c-tab-ujarak_hover {
+  color:        #fff;
+  background:   #37474f;
+  border-color: #37474f;
+}
+
+

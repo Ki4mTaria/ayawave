@@ -1,0 +1,45 @@
+/**
+ * @file form
+ */
+
+.c-form {
+  margin-left: 75px;
+}
+
+#i-form {
+  width:                 450px;
+  height:                240px;
+  background-color:      white;
+  border:                solid 1px black;
+  box-shadow:            10px 10px 10px rgba(0,0,0,0.4);
+  -moz-box-shadow:       10px 10px 10px rgba(0,0,0,0.4);
+  -webkit-box-shadow:    10px 10px 10px rgba(0,0,0,0.4);
+  position:              relative;
+  z-index:               100;
+}
+
+#i-from-err {
+  width:       300px;
+  height:      25px;
+  font-size:   15px;
+  font-weight: bold;
+  color:       red;
+  top:         20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius:    5px;
+  border-radius:         5px;
+}
+
+#i-form-id {
+}
+
+#i-form-pass {
+  padding-top: 20px;
+}
+
+#i-form-send {
+  padding-top: 20px;
+  margin-left: 225px;
+}
+
+/* end of file */

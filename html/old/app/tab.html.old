@@ -1,0 +1,15 @@
+<div id="i-hdr-tab">
+  <button class="c-tab-ujarak c-tab-header" id="i-home-tab">Home</button>
+  <button class="c-tab-ujarak c-tab-header" id="i-create-tab">Create</button>
+  <button class="c-tab-ujarak c-tab-header" id="i-mypage-tab">Mypage</button>
+  <button class="c-tab-ujarak c-tab-header" id="i-setting-tab">Setting</button>
+  <button class="c-tab-ujarak c-tab-header" id="i-system-tab">System</button>
+  <div style="float:none;height:45px;"></div>
+  <div id="t-conts">
+    <div id="i-home-conts"    class="c-tab-conts" style="display:none;"></div>
+    <div id="i-create-conts"  class="c-tab-conts" style="display:none;"></div>
+    <div id="i-mypage-conts"  class="c-tab-conts" style="display:none;"></div>
+    <div id="i-setting-conts" class="c-tab-conts" style="display:none;">setting</div>
+    <div id="i-system-conts"  class="c-tab-conts" style="display:none;">system</div>
+  </div>
+</div>

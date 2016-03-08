@@ -1,0 +1,34 @@
+/**
+ * @file Ctab_home.css
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Orbitron:400,700);
+
+.c-home-arrow {
+  position:     relative;
+  float:        left;
+  font-size:    2.5em;
+  cursor:       pointer;
+  color:        #37474f;
+  padding-top:  6px;
+}
+
+.c-home-elm {
+  margin-left: 30px;
+  margin-top:  25px;
+  width:       93%
+}
+
+.c-ttl {
+  font-family:   'Orbitron', sans-serif;
+  font-size:     25px;
+  cursor:        pointer;
+  padding-top:   9px;
+  margin-left:   40px;
+  border-bottom: 1px solid  #37474f;
+}
+
+.c-elm-conts {
+}
+
+/* end of file */

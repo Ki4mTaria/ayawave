@@ -1,0 +1,79 @@
+/**
+ * @file Cedt_base.css
+ */
+
+#i-code-subj {
+  font-family:   'Orbitron', sans-serif;
+  margin-top:    25px;
+  margin-left:   55px;
+  height:      45px;
+  padding-top: 20px;
+  width:       600px;
+  cursor:      text;
+}
+
+#i-editor {
+  width:       600px;
+  height:      -40px;
+  height:      250px;
+  margin-top:  5px;
+  margin-left: 50px;
+  border:      solid 1px black;
+}
+
+#i-editor:hover {
+  cursor: text;
+}
+
+#i-codenum {
+  width:        35px;
+  height:       230px;
+  border-right: solid 1px black;
+  float:        left;
+  position:     relative;
+  top:          20px;
+  z-index:      80;
+  cursor:       default;
+}
+
+.c-codenum-val {
+  height:        20px;
+  padding-top:   2px;
+  padding-right: 2px;
+  text-align:    right;
+}
+
+#i-editor-conts {
+  margin-left: 35px;
+}
+
+#i-editor-conts .c-margin-top-on {
+  width:      598px;
+  height:     20px;
+  background: rgb(238, 238, 238);
+  position:   relative;
+  left:       -35px;
+}
+
+#i-editor-conts #i-margin-left {
+  width:  5px;
+  height: 250px;
+  float:  left;
+}
+
+.c-editor-conts {
+  height:        20px;
+  padding-top:   2px;
+  text-align:    left;
+  float:         left;
+}
+
+#i-cursor {
+  float:         left;
+  height:        16px;
+  width:         3px;
+  border-right:  solid 1px black;
+  margin-top:    2px;
+}
+
+/* end of file */

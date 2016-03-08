@@ -1,0 +1,71 @@
+.c-tab-ujarak {
+  float:          left;
+  min-width:      150px;
+  max-width:      250px;
+  display:        block;
+  margin:         0px;
+  padding:        1em 2em;
+  background:     #EEEEEE;
+  color:          inherit;
+  vertical-align: middle;
+  position:       relative;
+  cursor:         pointer;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing:     grayscale;
+  font-weight:    600;
+  border:         1px solid;
+  -webkit-transition:          border-color 0.4s, color 0.4s;
+  transition:                  border-color 0.4s, color 0.4s;
+  z-index:        100;
+}
+
+.c-tab-ujarak:focus {
+  outline: none;
+}
+
+.c-tab-ujarak > span {
+  vertical-align: middle;
+}
+
+.c-tab-ujarak::before {
+  content:    '';
+  position:   absolute;
+  top:        0;
+  left:       0;
+  width:      100%;
+  height:     100%;
+  background: #37474f;
+  z-index:    -1;
+  opacity:    0;
+  -webkit-transform:  scale3d(0.7, 1, 1);
+  transform:          scale3d(0.7, 1, 1);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+  transition:         transform 0.4s, opacity 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function:         cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.c-tab-ujarak,
+.c-tab-ujarak::before {
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.c-tab-ujarak:hover {
+  color:        #fff;
+  border-color: #37474f;
+}
+
+.c-tab-ujarak:hover::before {
+  opacity:           1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform:         translate3d(0, 0, 0);
+}
+
+.c-tab-ujarak_hover {
+  color:        #fff;
+  background:   #37474f;
+  border-color: #37474f;
+}
+
+/* end of file */
